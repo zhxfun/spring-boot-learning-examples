@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.0.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>com.zhxfun</groupId>
+	<artifactId>spring-boot-learning-examples</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>spring-boot-learning-examples</name>
+	<description>Spring Boot知识点整理、工程实践，并结合工作案例进行深入</description>
+
+	<modules>
+		<module>spring-boot-mybatis</module>
+	</modules>
+
+	<properties>
+		<!-- common -->
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- dependency -->
+		<mybatis-spring-boot-starter.version>2.1.2</mybatis-spring-boot-starter.version>
+		<mybatis-dynamic-sql.version>1.1.4</mybatis-dynamic-sql.version>
+
+		<!-- plugin -->
+		<maven.plugin.compiler.version>3.1</maven.plugin.compiler.version>
+		<maven.plugin.mybatis-generator.version>1.4.0</maven.plugin.mybatis-generator.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Mybatis For SpringBoot -->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis-spring-boot-starter.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.mybatis.dynamic-sql/mybatis-dynamic-sql -->
+			<dependency>
+				<groupId>org.mybatis.dynamic-sql</groupId>
+				<artifactId>mybatis-dynamic-sql</artifactId>
+				<version>${mybatis-dynamic-sql.version}</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.mybatis.generator</groupId>
+					<artifactId>mybatis-generator-maven-plugin</artifactId>
+					<version>${maven.plugin.mybatis-generator.version}</version>
+					<!-- <executions> <execution> <id>Generate MyBatis Artifacts</id> <goals> 
+						<goal>generate</goal> </goals> </execution> </executions> -->
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

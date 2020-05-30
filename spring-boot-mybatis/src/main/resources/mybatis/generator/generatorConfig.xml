@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+		<!-- 插件 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin">
+            <property name="useEqualsHashCodeFromRoot" value="true"/>
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin">
+            <property name="useToStringFromRoot" value="true"/>
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+           <property name="useSerializableFromRoot" value="true"/>
+        </plugin>
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/jmmc?serverTimezone=UTC"
+			userId="root" password="123456">
+		</jdbcConnection>
+
+		<!--类型解析器 -->
+		<javaTypeResolver
+			type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+			<!--是否对整型进行分类 -->
+			<property name="forceBigDecimals" value="true" />
+			<!--是否试用jdk8时间类 -->
+			<property name="useJSR310Types" value="true" />
+		</javaTypeResolver>
+
+		<!--java实体类生成配置 -->
+		<javaModelGenerator
+			targetPackage="com.zhxfun.entity" targetProject="src/main/java/">
+			<!--此属性用于选择MyBatis Generator是否将根据内省表的目录和架构为对象生成不同的Java包。 -->
+			<property name="enableSubPackages" value="true" />
+			<!--去除字段空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		
+		<sqlMapGenerator targetPackage="mybatis/mysql/mapper"  targetProject="src/main/resources">
+	     <property name="enableSubPackages" value="true" />
+	   </sqlMapGenerator>
+
+		<!--mapper生成配置 -->
+		<javaClientGenerator
+			targetPackage="com.zhxfun.mapper" targetProject="src/main/java/"
+			type="XMLMAPPER">
+			<!--此属性用于选择MyBatis Generator是否将根据内省表的目录和架构为对象生成不同的Java包。 -->
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!--数据表的选择 -->
+		<table schema="jmmc" tableName="sys_user" domainObjectName="SysUser">
+		</table>
+	</context>
+</generatorConfiguration>
