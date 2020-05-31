@@ -56,7 +56,11 @@
 		</javaClientGenerator>
 
 		<!--数据表的选择 -->
-		<table schema="jmmc" tableName="sys_user" domainObjectName="SysUser">
-		</table>
+		<table schema="employees" tableName="employees" domainObjectName="Employee"></table>
+		<table schema="employees" tableName="departments" domainObjectName="Department"></table>
+		<table schema="employees" tableName="dept_emp" domainObjectName="DeptEmp"></table>
+		<table schema="employees" tableName="dept_manager" domainObjectName="DeptManager"></table>
+		<table schema="employees" tableName="salaries" domainObjectName="Salarie"></table>
+		<table schema="employees" tableName="titles" domainObjectName="Title"></table>
 	</context>
 </generatorConfiguration>
