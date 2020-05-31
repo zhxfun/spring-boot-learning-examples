@@ -1,31 +1,40 @@
 package com.zhxfun.entity;
 
 import java.io.Serializable;
+import javax.annotation.Generated;
 
 public class Department implements Serializable {
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     private String deptNo;
 
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     private String deptName;
 
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     private static final long serialVersionUID = 1L;
 
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     public String getDeptNo() {
         return deptNo;
     }
 
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     public void setDeptNo(String deptNo) {
         this.deptNo = deptNo == null ? null : deptNo.trim();
     }
 
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     public String getDeptName() {
         return deptName;
     }
 
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     public void setDeptName(String deptName) {
         this.deptName = deptName == null ? null : deptName.trim();
     }
 
     @Override
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     public boolean equals(Object that) {
         if (this == that) {
             return true;
@@ -42,6 +51,7 @@ public class Department implements Serializable {
     }
 
     @Override
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     public int hashCode() {
         final int prime = 31;
         int result = 1;
@@ -51,6 +61,7 @@ public class Department implements Serializable {
     }
 
     @Override
+    @Generated("org.mybatis.generator.api.MyBatisGenerator")
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName());

@@ -10,5 +10,4 @@
 		<setting name="logImpl" value="SLF4J" />
 		<setting name="logPrefix" value="dao." />
 	</settings>
-
 </configuration>
